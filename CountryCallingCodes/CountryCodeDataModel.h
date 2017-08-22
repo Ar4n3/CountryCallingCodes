@@ -11,7 +11,7 @@
 
 @interface CountryCodeDataModel : NSObject
 - (id)initWithSearchText:(NSString *)text;
-- (UIImage *)getCountryFlagForCode:(NSString *)countryCode;
+- (NSString *)getCountryFlagForCode:(NSString *)countryCode;
 - (NSString *)filteredCountryNameFor:(NSIndexPath *)indexPath;
 - (NSString *)countryNameForCode:(NSString *)countryCode;
 - (NSString *)filteredCountryDialCodeFor:(NSIndexPath *)indexPath;

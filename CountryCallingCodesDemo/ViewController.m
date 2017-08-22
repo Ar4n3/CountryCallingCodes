@@ -7,10 +7,10 @@
 //
 
 #import "ViewController.h"
-@import CountryCallingCodes;
 
-@interface ViewController () <CountryCodesViewControllerDelegate>
+@interface ViewController () <CountryCallingCodeDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *countryButton;
+@property (weak, nonatomic) IBOutlet UIButton *flagButton;
 @end
 
 @implementation ViewController
@@ -18,24 +18,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
+    [[CountryCallingCode sharedInstance] setDelegate:self];
+    [_countryButton setTitle:[CountryCallingCode sharedInstance].code forState:UIControlStateNormal];
+    [_flagButton setTitle:[CountryCallingCode sharedInstance].flag forState:UIControlStateNormal];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    UINavigationController *nc = (UINavigationController *)segue.destinationViewController;
-    CountryCodesViewController *ccvc = (CountryCodesViewController *)nc.topViewController;
-    ccvc.delegate = self;
-}
+#pragma mark - Delegate Methods
 
-
-- (void)didSelectCountryWithDialCode:(NSString *)code {
-    _countryButton.titleLabel.text = code;
+- (void)updateCountryData {
+    [_countryButton setTitle:[CountryCallingCode sharedInstance].code forState:UIControlStateNormal];
+    [_flagButton setTitle:[CountryCallingCode sharedInstance].flag forState:UIControlStateNormal];
 }
 
 @end

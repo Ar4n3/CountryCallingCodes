@@ -26,15 +26,8 @@
     return self;
 }
 
-- (UIImage *)getEmojiForCountryCode:(NSString *)countryCode {
-    NSNumber * y = _jsonDict[countryCode];
-    if (!y) {
-        y = @0;
-    }
-    CGImageRef cgImage = CGImageCreateWithImageInRect([[UIImage imageWithContentsOfFile:[[NSBundle bundleForClass:self.class] pathForResource:@"flags" ofType:@"png"]] CGImage], CGRectMake(0, y.integerValue * 2, 32, 32));
-    UIImage * result = [UIImage imageWithCGImage:cgImage scale:2.0 orientation:UIImageOrientationUp];
-    CGImageRelease(cgImage);
-    return result;
+- (NSString *)getEmojiForCountryCode:(NSString *)countryCode {
+    return [_jsonDict objectForKey:countryCode];
 }
 
 @end

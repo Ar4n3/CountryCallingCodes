@@ -10,5 +10,5 @@
 #import <UIKit/UIKit.h>
 
 @interface EmojiFlag : NSObject
-- (UIImage *)getEmojiForCountryCode:(NSString *)countryCode;
+- (NSString *)getEmojiForCountryCode:(NSString *)countryCode;
 @end

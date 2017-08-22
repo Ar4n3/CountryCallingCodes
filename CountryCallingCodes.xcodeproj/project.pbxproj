@@ -32,6 +32,10 @@
 		7780DB9E1F03108D00010D38 /* flag_missing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7780DB991F03108D00010D38 /* flag_missing@2x.png */; };
 		7780DB9F1F03108D00010D38 /* flags.png in Resources */ = {isa = PBXBuildFile; fileRef = 7780DB9A1F03108D00010D38 /* flags.png */; };
 		7780DBA01F03108D00010D38 /* flags@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7780DB9B1F03108D00010D38 /* flags@2x.png */; };
+		77F4B04D1F4CBFA300B1799E /* CallingCodeHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F4B04B1F4CBFA300B1799E /* CallingCodeHelper.h */; };
+		77F4B04E1F4CBFA300B1799E /* CallingCodeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F4B04C1F4CBFA300B1799E /* CallingCodeHelper.m */; };
+		77F4B0511F4CCC6E00B1799E /* CountryCallingCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F4B04F1F4CCC6E00B1799E /* CountryCallingCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77F4B0521F4CCC6E00B1799E /* CountryCallingCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F4B0501F4CCC6E00B1799E /* CountryCallingCode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +89,10 @@
 		7780DB991F03108D00010D38 /* flag_missing@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "flag_missing@2x.png"; path = "Resources/flag_missing@2x.png"; sourceTree = "<group>"; };
 		7780DB9A1F03108D00010D38 /* flags.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flags.png; path = Resources/flags.png; sourceTree = "<group>"; };
 		7780DB9B1F03108D00010D38 /* flags@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "flags@2x.png"; path = "Resources/flags@2x.png"; sourceTree = "<group>"; };
+		77F4B04B1F4CBFA300B1799E /* CallingCodeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallingCodeHelper.h; sourceTree = "<group>"; };
+		77F4B04C1F4CBFA300B1799E /* CallingCodeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallingCodeHelper.m; sourceTree = "<group>"; };
+		77F4B04F1F4CCC6E00B1799E /* CountryCallingCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryCallingCode.h; sourceTree = "<group>"; };
+		77F4B0501F4CCC6E00B1799E /* CountryCallingCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryCallingCode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,16 +156,19 @@
 		7780DB2E1F02E87A00010D38 /* CountryCallingCodes */ = {
 			isa = PBXGroup;
 			children = (
+				77F4B0441F4CBE5600B1799E /* Supporting Files */,
 				7780DB7D1F02ED7800010D38 /* Resources */,
 				7780DB2F1F02E87A00010D38 /* CountryCallingCodes.h */,
-				7780DB301F02E87A00010D38 /* Info.plist */,
-				7780DB911F03021F00010D38 /* CountryCodes.storyboard */,
 				7780DB4A1F02EA3900010D38 /* CountryCodesViewController.h */,
 				7780DB4B1F02EA3900010D38 /* CountryCodesViewController.m */,
 				7780DB801F02EDB400010D38 /* CountryCodeDataModel.h */,
 				7780DB811F02EDB400010D38 /* CountryCodeDataModel.m */,
 				7780DB931F030A3100010D38 /* EmojiFlag.h */,
 				7780DB941F030A3100010D38 /* EmojiFlag.m */,
+				77F4B04B1F4CBFA300B1799E /* CallingCodeHelper.h */,
+				77F4B04C1F4CBFA300B1799E /* CallingCodeHelper.m */,
+				77F4B04F1F4CCC6E00B1799E /* CountryCallingCode.h */,
+				77F4B0501F4CCC6E00B1799E /* CountryCallingCode.m */,
 			);
 			path = CountryCallingCodes;
 			sourceTree = "<group>";
@@ -225,6 +236,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		77F4B0441F4CBE5600B1799E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7780DB301F02E87A00010D38 /* Info.plist */,
+				7780DB911F03021F00010D38 /* CountryCodes.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -234,7 +254,9 @@
 			files = (
 				7780DB3D1F02E87A00010D38 /* CountryCallingCodes.h in Headers */,
 				7780DB4C1F02EA3900010D38 /* CountryCodesViewController.h in Headers */,
+				77F4B0511F4CCC6E00B1799E /* CountryCallingCode.h in Headers */,
 				7780DB821F02EDB400010D38 /* CountryCodeDataModel.h in Headers */,
+				77F4B04D1F4CBFA300B1799E /* CallingCodeHelper.h in Headers */,
 				7780DB951F030A3100010D38 /* EmojiFlag.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +437,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7780DB961F030A3100010D38 /* EmojiFlag.m in Sources */,
+				77F4B04E1F4CBFA300B1799E /* CallingCodeHelper.m in Sources */,
+				77F4B0521F4CCC6E00B1799E /* CountryCallingCode.m in Sources */,
 				7780DB4D1F02EA3900010D38 /* CountryCodesViewController.m in Sources */,
 				7780DB831F02EDB400010D38 /* CountryCodeDataModel.m in Sources */,
 			);
@@ -716,6 +740,7 @@
 				7780DB421F02E87A00010D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7780DB431F02E87A00010D38 /* Build configuration list for PBXNativeTarget "CountryCallingCodesTests" */ = {
 			isa = XCConfigurationList;
@@ -724,6 +749,7 @@
 				7780DB451F02E87A00010D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7780DB711F02EAB400010D38 /* Build configuration list for PBXNativeTarget "CountryCallingCodesDemo" */ = {
 			isa = XCConfigurationList;
@@ -732,6 +758,7 @@
 				7780DB731F02EAB400010D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7780DB741F02EAB400010D38 /* Build configuration list for PBXNativeTarget "CountryCallingCodesDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -740,6 +767,7 @@
 				7780DB761F02EAB400010D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

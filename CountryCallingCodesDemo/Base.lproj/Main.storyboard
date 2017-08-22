@@ -6,10 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--My Country Codes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -18,23 +19,49 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="94" width="375" height="573"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asJ-11-FXA">
-                                <rect key="frame" x="164" y="287" width="46" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asJ-11-FXA">
+                                <rect key="frame" x="112.5" y="266.5" width="150" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="x1Q-6B-dFI"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="dOj-KS-fgh" kind="presentation" id="mB7-rd-R3y"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFO-Ri-h3N">
+                                <rect key="frame" x="112" y="221.5" width="150" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ak1-hS-FsY"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yFO-Ri-h3N" firstAttribute="width" secondItem="asJ-11-FXA" secondAttribute="width" id="3eT-KH-vt5"/>
+                            <constraint firstItem="asJ-11-FXA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BHp-4t-lyy"/>
+                            <constraint firstItem="asJ-11-FXA" firstAttribute="trailing" secondItem="yFO-Ri-h3N" secondAttribute="trailing" id="BUw-mR-wes"/>
+                            <constraint firstItem="asJ-11-FXA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="H68-W5-Yyd"/>
+                            <constraint firstItem="asJ-11-FXA" firstAttribute="top" secondItem="yFO-Ri-h3N" secondAttribute="bottom" constant="5" id="KeY-rZ-du3"/>
+                            <constraint firstItem="asJ-11-FXA" firstAttribute="leading" secondItem="yFO-Ri-h3N" secondAttribute="leading" id="Peh-t1-Ayh"/>
+                            <constraint firstItem="yFO-Ri-h3N" firstAttribute="height" secondItem="asJ-11-FXA" secondAttribute="height" id="Qt7-vC-PaO"/>
+                            <constraint firstItem="asJ-11-FXA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sSc-Cp-ZbW"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="xZt-p2-o5E"/>
+                    <navigationItem key="navigationItem" title="My Country Codes" id="xZt-p2-o5E"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO"/>
                     <connections>
-                        <outlet property="countryButton" destination="asJ-11-FXA" id="BNu-vo-AqO"/>
+                        <outlet property="countryButton" destination="asJ-11-FXA" id="Qey-0n-duK"/>
+                        <outlet property="flagButton" destination="yFO-Ri-h3N" id="9pG-dt-LAe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -53,7 +80,9 @@
         <scene sceneID="irq-FB-J1H">
             <objects>
                 <navigationController id="foi-Lh-i1S" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j3A-OG-f1V">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="j3A-OG-f1V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

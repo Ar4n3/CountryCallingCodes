@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@import CountryCallingCodes;
 
 @interface ViewController : UIViewController
-
-
+@property (strong, nonatomic) CountryCallingCode *countryCallingManager;
 @end
 

@@ -94,7 +94,7 @@ NSString *const kCountryCodesCodeKey = @"code";
     return self;
 }
 
-- (UIImage *)getCountryFlagForCode:(NSString *)countryCode {
+- (NSString *)getCountryFlagForCode:(NSString *)countryCode {
     EmojiFlag *emojiFlag = [[EmojiFlag alloc] init];
     
     return [emojiFlag getEmojiForCountryCode:countryCode];

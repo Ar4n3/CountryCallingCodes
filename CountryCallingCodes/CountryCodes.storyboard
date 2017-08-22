@@ -62,6 +62,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="EKQ-Oi-HDO">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="MM1-iN-3LH">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <connections>
                                 <action selector="onCancelPressed:" destination="akU-xE-kqh" id="Urq-MY-1HY"/>
                             </connections>
