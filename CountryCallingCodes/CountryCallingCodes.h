@@ -16,5 +16,4 @@ FOUNDATION_EXPORT const unsigned char CountryCallingCodesVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <CountryCallingCodes/PublicHeader.h>
 
-#import <CountryCallingCodes/CountryCodesViewController.h>
 #import <CountryCallingCodes/CountryCallingCode.h>

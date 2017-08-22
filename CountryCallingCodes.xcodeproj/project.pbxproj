@@ -10,7 +10,7 @@
 		7780DB361F02E87A00010D38 /* CountryCallingCodes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7780DB2C1F02E87A00010D38 /* CountryCallingCodes.framework */; };
 		7780DB3B1F02E87A00010D38 /* CountryCallingCodesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780DB3A1F02E87A00010D38 /* CountryCallingCodesTests.swift */; };
 		7780DB3D1F02E87A00010D38 /* CountryCallingCodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 7780DB2F1F02E87A00010D38 /* CountryCallingCodes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7780DB4C1F02EA3900010D38 /* CountryCodesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7780DB4A1F02EA3900010D38 /* CountryCodesViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7780DB4C1F02EA3900010D38 /* CountryCodesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7780DB4A1F02EA3900010D38 /* CountryCodesViewController.h */; };
 		7780DB4D1F02EA3900010D38 /* CountryCodesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7780DB4B1F02EA3900010D38 /* CountryCodesViewController.m */; };
 		7780DB561F02EAB300010D38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7780DB551F02EAB300010D38 /* main.m */; };
 		7780DB591F02EAB300010D38 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7780DB581F02EAB300010D38 /* AppDelegate.m */; };
@@ -253,9 +253,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7780DB3D1F02E87A00010D38 /* CountryCallingCodes.h in Headers */,
-				7780DB4C1F02EA3900010D38 /* CountryCodesViewController.h in Headers */,
 				77F4B0511F4CCC6E00B1799E /* CountryCallingCode.h in Headers */,
 				7780DB821F02EDB400010D38 /* CountryCodeDataModel.h in Headers */,
+				7780DB4C1F02EA3900010D38 /* CountryCodesViewController.h in Headers */,
 				77F4B04D1F4CBFA300B1799E /* CallingCodeHelper.h in Headers */,
 				7780DB951F030A3100010D38 /* EmojiFlag.h in Headers */,
 			);

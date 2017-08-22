@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol CountryCodesViewControllerDelegate <NSObject>
-- (void)didSelectCountryWithDialCode:(NSString *)code;
-@end
-
 @interface CountryCodesViewController : UIViewController
-@property (weak, nonatomic) id<CountryCodesViewControllerDelegate>delegate;
+
 @end

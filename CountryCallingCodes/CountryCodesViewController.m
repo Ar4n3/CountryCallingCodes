@@ -104,23 +104,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CountryCodeCell" forIndexPath:indexPath];
-    if (_searchController.isActive && ![_searchController.searchBar.text isEqualToString:@""]) {
-        NSString *countryCode = [_filteredDataModel getCountryCodeForFilteredModelAtIndexPath:indexPath];
-        cell.textLabel.text = [NSString stringWithFormat:@"%@\t%@", [_filteredDataModel getCountryFlagForCode:countryCode], [_filteredDataModel filteredCountryNameFor:indexPath]];
-        cell.detailTextLabel.text = [_filteredDataModel filteredCountryDialCodeFor:indexPath];
-        
-        return cell;
-    }
-    NSString *countryCode = [_dataModel getCountryCodeAtIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@\t%@", [_dataModel getCountryFlagForCode:countryCode], [_dataModel countryNameForCode:countryCode]];
-    cell.detailTextLabel.text = [_dataModel countryDialCodeForCode:countryCode];
+    NSString *code = [self getCallingCodeForIndexPath:indexPath];
+    NSString *flag = [self getFlagForIndexPath:indexPath];
+    NSString *countryName = [self getCountryNameForIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@\t%@", flag, countryName];
+    cell.detailTextLabel.text = code;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [_tableView cellForRowAtIndexPath:indexPath];
-    [[CountryCallingCode sharedInstance] updateDataWithCode:cell.detailTextLabel.text andFlag:[_dataModel getCountryFlagForCode:[_dataModel getCountryCodeAtIndexPath:indexPath]]];
+    NSDictionary *userInfo = [self getUserInfoForIndexPath:indexPath];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kDidSelectCountryCode object:nil userInfo:userInfo];
     if (_searchController.isActive) [_searchController setActive:NO];
     [self dismissViewControllerAnimated:YES completion:^{
         [[CountryCallingCode sharedInstance].delegate updateCountryData];
@@ -129,6 +124,39 @@
 
 - (IBAction)onCancelPressed:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Helper methods
+
+- (NSDictionary *)getUserInfoForIndexPath:(NSIndexPath *)indexPath {
+    NSString *flag = [self getFlagForIndexPath:indexPath];
+    NSString *code = [self getCallingCodeForIndexPath:indexPath];
+    return @{ kCCCode: code,
+              kCCFlag: flag };
+}
+
+- (NSString *)getFlagForIndexPath:(NSIndexPath *)indexPath {
+    if (_searchController.isActive && ![_searchController.searchBar.text isEqualToString:@""]) {
+        return [_filteredDataModel getCountryFlagForCode:[_filteredDataModel getCountryCodeForFilteredModelAtIndexPath:indexPath]];
+    }
+    
+    return [_dataModel getCountryFlagForCode:[_dataModel getCountryCodeAtIndexPath:indexPath]];
+}
+
+- (NSString *)getCallingCodeForIndexPath:(NSIndexPath *)indexPath {
+    if (_searchController.isActive && ![_searchController.searchBar.text isEqualToString:@""]) {
+        return [_filteredDataModel filteredCountryDialCodeFor:indexPath];
+    }
+    
+    return [_dataModel countryDialCodeForCode:[_dataModel getCountryCodeAtIndexPath:indexPath]];
+}
+
+- (NSString *)getCountryNameForIndexPath:(NSIndexPath *)indexPath {
+    if (_searchController.isActive && ![_searchController.searchBar.text isEqualToString:@""]) {
+        return [_filteredDataModel filteredCountryNameFor:indexPath];
+    }
+    
+    return [_dataModel countryNameForCode:[_dataModel getCountryCodeAtIndexPath:indexPath]];
 }
 
 @end
