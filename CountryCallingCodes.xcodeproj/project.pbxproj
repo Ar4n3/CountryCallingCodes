@@ -34,6 +34,15 @@
 		7780DBA01F03108D00010D38 /* flags@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7780DB9B1F03108D00010D38 /* flags@2x.png */; };
 		77B9CE881F4E055E004489B9 /* CountryCallingCodes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7780DB2C1F02E87A00010D38 /* CountryCallingCodes.framework */; };
 		77B9CE891F4E055E004489B9 /* CountryCallingCodes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7780DB2C1F02E87A00010D38 /* CountryCallingCodes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		77B9CE941F4E0D5D004489B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B9CE931F4E0D5D004489B9 /* AppDelegate.swift */; };
+		77B9CE961F4E0D5D004489B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B9CE951F4E0D5D004489B9 /* ViewController.swift */; };
+		77B9CE991F4E0D5D004489B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B9CE971F4E0D5D004489B9 /* Main.storyboard */; };
+		77B9CE9C1F4E0D5D004489B9 /* CountryCallingCodesDemoSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77B9CE9A1F4E0D5D004489B9 /* CountryCallingCodesDemoSwift.xcdatamodeld */; };
+		77B9CE9E1F4E0D5D004489B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B9CE9D1F4E0D5D004489B9 /* Assets.xcassets */; };
+		77B9CEA11F4E0D5D004489B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B9CE9F1F4E0D5D004489B9 /* LaunchScreen.storyboard */; };
+		77B9CEAC1F4E0D5D004489B9 /* CountryCallingCodesDemoSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B9CEAB1F4E0D5D004489B9 /* CountryCallingCodesDemoSwiftTests.swift */; };
+		77B9CEB41F4E1099004489B9 /* CountryCallingCodes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7780DB2C1F02E87A00010D38 /* CountryCallingCodes.framework */; };
+		77B9CEB51F4E1099004489B9 /* CountryCallingCodes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7780DB2C1F02E87A00010D38 /* CountryCallingCodes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		77F4B04D1F4CBFA300B1799E /* CallingCodeHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F4B04B1F4CBFA300B1799E /* CallingCodeHelper.h */; };
 		77F4B04E1F4CBFA300B1799E /* CallingCodeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F4B04C1F4CBFA300B1799E /* CallingCodeHelper.m */; };
 		77F4B0511F4CCC6E00B1799E /* CountryCallingCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F4B04F1F4CCC6E00B1799E /* CountryCallingCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -62,6 +71,20 @@
 			remoteGlobalIDString = 7780DB2B1F02E87A00010D38;
 			remoteInfo = CountryCallingCodes;
 		};
+		77B9CEA81F4E0D5D004489B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7780DB231F02E87A00010D38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77B9CE901F4E0D5D004489B9;
+			remoteInfo = CountryCallingCodesDemoSwift;
+		};
+		77B9CEB61F4E1099004489B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7780DB231F02E87A00010D38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7780DB2B1F02E87A00010D38;
+			remoteInfo = CountryCallingCodes;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,6 +95,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				77B9CE891F4E055E004489B9 /* CountryCallingCodes.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77B9CEB81F4E1099004489B9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				77B9CEB51F4E1099004489B9 /* CountryCallingCodes.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +146,17 @@
 		7780DB991F03108D00010D38 /* flag_missing@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "flag_missing@2x.png"; path = "Resources/flag_missing@2x.png"; sourceTree = "<group>"; };
 		7780DB9A1F03108D00010D38 /* flags.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flags.png; path = Resources/flags.png; sourceTree = "<group>"; };
 		7780DB9B1F03108D00010D38 /* flags@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "flags@2x.png"; path = "Resources/flags@2x.png"; sourceTree = "<group>"; };
+		77B9CE911F4E0D5D004489B9 /* CountryCallingCodesDemoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountryCallingCodesDemoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		77B9CE931F4E0D5D004489B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		77B9CE951F4E0D5D004489B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		77B9CE981F4E0D5D004489B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		77B9CE9B1F4E0D5D004489B9 /* CountryCallingCodesDemoSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CountryCallingCodesDemoSwift.xcdatamodel; sourceTree = "<group>"; };
+		77B9CE9D1F4E0D5D004489B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		77B9CEA01F4E0D5D004489B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		77B9CEA21F4E0D5D004489B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77B9CEA71F4E0D5D004489B9 /* CountryCallingCodesDemoSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountryCallingCodesDemoSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		77B9CEAB1F4E0D5D004489B9 /* CountryCallingCodesDemoSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCallingCodesDemoSwiftTests.swift; sourceTree = "<group>"; };
+		77B9CEAD1F4E0D5D004489B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77F4B04B1F4CBFA300B1799E /* CallingCodeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallingCodeHelper.h; sourceTree = "<group>"; };
 		77F4B04C1F4CBFA300B1799E /* CallingCodeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallingCodeHelper.m; sourceTree = "<group>"; };
 		77F4B04F1F4CCC6E00B1799E /* CountryCallingCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryCallingCode.h; sourceTree = "<group>"; };
@@ -151,6 +196,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		77B9CE8E1F4E0D5D004489B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77B9CEB41F4E1099004489B9 /* CountryCallingCodes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77B9CEA41F4E0D5D004489B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -161,6 +221,8 @@
 				7780DB391F02E87A00010D38 /* CountryCallingCodesTests */,
 				7780DB531F02EAB300010D38 /* CountryCallingCodesDemo */,
 				7780DB6D1F02EAB400010D38 /* CountryCallingCodesDemoTests */,
+				77B9CE921F4E0D5D004489B9 /* CountryCallingCodesDemoSwift */,
+				77B9CEAA1F4E0D5D004489B9 /* CountryCallingCodesDemoSwiftTests */,
 				7780DB2D1F02E87A00010D38 /* Products */,
 				7780DB8C1F0301CA00010D38 /* Frameworks */,
 			);
@@ -173,6 +235,8 @@
 				7780DB351F02E87A00010D38 /* CountryCallingCodesTests.xctest */,
 				7780DB521F02EAB300010D38 /* CountryCallingCodesDemo.app */,
 				7780DB6A1F02EAB400010D38 /* CountryCallingCodesDemoTests.xctest */,
+				77B9CE911F4E0D5D004489B9 /* CountryCallingCodesDemoSwift.app */,
+				77B9CEA71F4E0D5D004489B9 /* CountryCallingCodesDemoSwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -258,6 +322,29 @@
 				7780DB8D1F0301CA00010D38 /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		77B9CE921F4E0D5D004489B9 /* CountryCallingCodesDemoSwift */ = {
+			isa = PBXGroup;
+			children = (
+				77B9CE931F4E0D5D004489B9 /* AppDelegate.swift */,
+				77B9CE951F4E0D5D004489B9 /* ViewController.swift */,
+				77B9CE971F4E0D5D004489B9 /* Main.storyboard */,
+				77B9CE9D1F4E0D5D004489B9 /* Assets.xcassets */,
+				77B9CE9F1F4E0D5D004489B9 /* LaunchScreen.storyboard */,
+				77B9CEA21F4E0D5D004489B9 /* Info.plist */,
+				77B9CE9A1F4E0D5D004489B9 /* CountryCallingCodesDemoSwift.xcdatamodeld */,
+			);
+			path = CountryCallingCodesDemoSwift;
+			sourceTree = "<group>";
+		};
+		77B9CEAA1F4E0D5D004489B9 /* CountryCallingCodesDemoSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				77B9CEAB1F4E0D5D004489B9 /* CountryCallingCodesDemoSwiftTests.swift */,
+				77B9CEAD1F4E0D5D004489B9 /* Info.plist */,
+			);
+			path = CountryCallingCodesDemoSwiftTests;
 			sourceTree = "<group>";
 		};
 		77F4B0441F4CBE5600B1799E /* Supporting Files */ = {
@@ -361,6 +448,43 @@
 			productReference = 7780DB6A1F02EAB400010D38 /* CountryCallingCodesDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		77B9CE901F4E0D5D004489B9 /* CountryCallingCodesDemoSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77B9CEAE1F4E0D5D004489B9 /* Build configuration list for PBXNativeTarget "CountryCallingCodesDemoSwift" */;
+			buildPhases = (
+				77B9CE8D1F4E0D5D004489B9 /* Sources */,
+				77B9CE8E1F4E0D5D004489B9 /* Frameworks */,
+				77B9CE8F1F4E0D5D004489B9 /* Resources */,
+				77B9CEB81F4E1099004489B9 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77B9CEB71F4E1099004489B9 /* PBXTargetDependency */,
+			);
+			name = CountryCallingCodesDemoSwift;
+			productName = CountryCallingCodesDemoSwift;
+			productReference = 77B9CE911F4E0D5D004489B9 /* CountryCallingCodesDemoSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		77B9CEA61F4E0D5D004489B9 /* CountryCallingCodesDemoSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77B9CEB11F4E0D5D004489B9 /* Build configuration list for PBXNativeTarget "CountryCallingCodesDemoSwiftTests" */;
+			buildPhases = (
+				77B9CEA31F4E0D5D004489B9 /* Sources */,
+				77B9CEA41F4E0D5D004489B9 /* Frameworks */,
+				77B9CEA51F4E0D5D004489B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77B9CEA91F4E0D5D004489B9 /* PBXTargetDependency */,
+			);
+			name = CountryCallingCodesDemoSwiftTests;
+			productName = CountryCallingCodesDemoSwiftTests;
+			productReference = 77B9CEA71F4E0D5D004489B9 /* CountryCallingCodesDemoSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -393,6 +517,17 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 7780DB511F02EAB300010D38;
 					};
+					77B9CE901F4E0D5D004489B9 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = XZF6KK66YQ;
+						ProvisioningStyle = Automatic;
+					};
+					77B9CEA61F4E0D5D004489B9 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = XZF6KK66YQ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 77B9CE901F4E0D5D004489B9;
+					};
 				};
 			};
 			buildConfigurationList = 7780DB261F02E87A00010D38 /* Build configuration list for PBXProject "CountryCallingCodes" */;
@@ -412,6 +547,8 @@
 				7780DB341F02E87A00010D38 /* CountryCallingCodesTests */,
 				7780DB511F02EAB300010D38 /* CountryCallingCodesDemo */,
 				7780DB691F02EAB400010D38 /* CountryCallingCodesDemoTests */,
+				77B9CE901F4E0D5D004489B9 /* CountryCallingCodesDemoSwift */,
+				77B9CEA61F4E0D5D004489B9 /* CountryCallingCodesDemoSwiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -449,6 +586,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7780DB681F02EAB400010D38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77B9CE8F1F4E0D5D004489B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77B9CEA11F4E0D5D004489B9 /* LaunchScreen.storyboard in Resources */,
+				77B9CE9E1F4E0D5D004489B9 /* Assets.xcassets in Resources */,
+				77B9CE991F4E0D5D004489B9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77B9CEA51F4E0D5D004489B9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -496,6 +650,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		77B9CE8D1F4E0D5D004489B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77B9CE961F4E0D5D004489B9 /* ViewController.swift in Sources */,
+				77B9CE941F4E0D5D004489B9 /* AppDelegate.swift in Sources */,
+				77B9CE9C1F4E0D5D004489B9 /* CountryCallingCodesDemoSwift.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77B9CEA31F4E0D5D004489B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77B9CEAC1F4E0D5D004489B9 /* CountryCallingCodesDemoSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -514,6 +686,16 @@
 			target = 7780DB2B1F02E87A00010D38 /* CountryCallingCodes */;
 			targetProxy = 77B9CE8A1F4E055E004489B9 /* PBXContainerItemProxy */;
 		};
+		77B9CEA91F4E0D5D004489B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 77B9CE901F4E0D5D004489B9 /* CountryCallingCodesDemoSwift */;
+			targetProxy = 77B9CEA81F4E0D5D004489B9 /* PBXContainerItemProxy */;
+		};
+		77B9CEB71F4E1099004489B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7780DB2B1F02E87A00010D38 /* CountryCallingCodes */;
+			targetProxy = 77B9CEB61F4E1099004489B9 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -529,6 +711,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				7780DB631F02EAB300010D38 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		77B9CE971F4E0D5D004489B9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77B9CE981F4E0D5D004489B9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		77B9CE9F1F4E0D5D004489B9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77B9CEA01F4E0D5D004489B9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -752,6 +950,62 @@
 			};
 			name = Release;
 		};
+		77B9CEAF1F4E0D5D004489B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XZF6KK66YQ;
+				INFOPLIST_FILE = CountryCallingCodesDemoSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CountryCallingCodesDemoSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		77B9CEB01F4E0D5D004489B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XZF6KK66YQ;
+				INFOPLIST_FILE = CountryCallingCodesDemoSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CountryCallingCodesDemoSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		77B9CEB21F4E0D5D004489B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XZF6KK66YQ;
+				INFOPLIST_FILE = CountryCallingCodesDemoSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CountryCallingCodesDemoSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CountryCallingCodesDemoSwift.app/CountryCallingCodesDemoSwift";
+			};
+			name = Debug;
+		};
+		77B9CEB31F4E0D5D004489B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XZF6KK66YQ;
+				INFOPLIST_FILE = CountryCallingCodesDemoSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CountryCallingCodesDemoSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CountryCallingCodesDemoSwift.app/CountryCallingCodesDemoSwift";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -800,7 +1054,36 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		77B9CEAE1F4E0D5D004489B9 /* Build configuration list for PBXNativeTarget "CountryCallingCodesDemoSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77B9CEAF1F4E0D5D004489B9 /* Debug */,
+				77B9CEB01F4E0D5D004489B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		77B9CEB11F4E0D5D004489B9 /* Build configuration list for PBXNativeTarget "CountryCallingCodesDemoSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77B9CEB21F4E0D5D004489B9 /* Debug */,
+				77B9CEB31F4E0D5D004489B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		77B9CE9A1F4E0D5D004489B9 /* CountryCallingCodesDemoSwift.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				77B9CE9B1F4E0D5D004489B9 /* CountryCallingCodesDemoSwift.xcdatamodel */,
+			);
+			currentVersion = 77B9CE9B1F4E0D5D004489B9 /* CountryCallingCodesDemoSwift.xcdatamodel */;
+			path = CountryCallingCodesDemoSwift.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7780DB231F02E87A00010D38 /* Project object */;
 }
