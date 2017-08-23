@@ -17,13 +17,21 @@
 @property (strong, nonatomic) CountryCallingCode *countryCallingManager;
 @property (strong, nonatomic) NSArray *sectionIndexTitles;
 @property (strong, nonatomic) UISearchController *searchController;
+@property (weak, nonatomic) IBOutlet UIButton *dismissButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
+@property (weak, nonatomic) IBOutlet UIView *searchBarContainerView;
+@property (strong, nonatomic) UIView *alphaView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchBarContainerViewBottomConstraint;
 @end
+
+CGFloat const kCornerRadius = 8.0f;
 
 @implementation CountryCodesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [self configurePresentingViewControllerUI];
     _dataModel = [[CountryCodeDataModel alloc] init];
     [self configureSearchController];
     _tableView.delegate = self;
@@ -31,7 +39,13 @@
     _sectionIndexTitles = [_dataModel getSectionIndexTitles];
     [_tableView reloadData];
 }
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     
+    [self clearPresentingViewControllerUI];
+}
+
 - (void)dealloc {
     [_searchController.view removeFromSuperview];
 }
@@ -41,16 +55,34 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Configure UI
+
+- (void)configurePresentingViewControllerUI {
+    _alphaView = [[UIView alloc] initWithFrame:self.presentingViewController.view.bounds];
+    [_alphaView setBackgroundColor:[UIColor clearColor]];
+    [_alphaView setAlpha:0.5];
+    [self.presentingViewController.view addSubview:_alphaView];
+    [UIView animateWithDuration:0.2 animations:^{
+        [_alphaView setBackgroundColor:[UIColor blackColor]];
+    }];
+}
+
+- (void)clearPresentingViewControllerUI {
+    [_alphaView removeFromSuperview];
+}
+
 #pragma mark - Search Controller Delegate
 
 - (void)configureSearchController {
     _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
-    _searchController.searchBar.searchBarStyle = UISearchBarStyleDefault;
+    _searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+    [_searchController.searchBar setTintColor:[UIColor lightGrayColor]];
     _searchController.searchResultsUpdater = self;
     _searchController.dimsBackgroundDuringPresentation = false;
     _searchController.definesPresentationContext = true;
-    _tableView.tableHeaderView = _searchController.searchBar;
-    [_tableView setContentOffset:CGPointMake(0, _searchController.searchBar.frame.size.height) animated:YES];
+    _searchBarContainerView.layer.cornerRadius = kCornerRadius;
+    _searchBarContainerViewBottomConstraint.constant = -kCornerRadius+(kCornerRadius/2/2);
+    [_searchBarContainerView addSubview:_searchController.searchBar];
 }
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
@@ -117,12 +149,14 @@
     NSDictionary *userInfo = [self getUserInfoForIndexPath:indexPath];
     [[NSNotificationCenter defaultCenter] postNotificationName:kDidSelectCountryCode object:nil userInfo:userInfo];
     if (_searchController.isActive) [_searchController setActive:NO];
+    [[CountryCallingCode sharedInstance].delegate updateCountryData];
     [self dismissViewControllerAnimated:YES completion:^{
-        [[CountryCallingCode sharedInstance].delegate updateCountryData];
+//        [[CountryCallingCode sharedInstance].delegate updateCountryData];
     }];
 }
 
-- (IBAction)onCancelPressed:(UIBarButtonItem *)sender {
+- (IBAction)onDismiss:(UIButton *)sender {
+    if (_searchController.isActive) [_searchController setActive:NO];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

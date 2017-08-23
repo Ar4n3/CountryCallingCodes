@@ -32,6 +32,8 @@
 		7780DB9E1F03108D00010D38 /* flag_missing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7780DB991F03108D00010D38 /* flag_missing@2x.png */; };
 		7780DB9F1F03108D00010D38 /* flags.png in Resources */ = {isa = PBXBuildFile; fileRef = 7780DB9A1F03108D00010D38 /* flags.png */; };
 		7780DBA01F03108D00010D38 /* flags@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7780DB9B1F03108D00010D38 /* flags@2x.png */; };
+		77B9CE881F4E055E004489B9 /* CountryCallingCodes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7780DB2C1F02E87A00010D38 /* CountryCallingCodes.framework */; };
+		77B9CE891F4E055E004489B9 /* CountryCallingCodes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7780DB2C1F02E87A00010D38 /* CountryCallingCodes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		77F4B04D1F4CBFA300B1799E /* CallingCodeHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F4B04B1F4CBFA300B1799E /* CallingCodeHelper.h */; };
 		77F4B04E1F4CBFA300B1799E /* CallingCodeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F4B04C1F4CBFA300B1799E /* CallingCodeHelper.m */; };
 		77F4B0511F4CCC6E00B1799E /* CountryCallingCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F4B04F1F4CCC6E00B1799E /* CountryCallingCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -53,7 +55,28 @@
 			remoteGlobalIDString = 7780DB511F02EAB300010D38;
 			remoteInfo = CountryCallingCodesDemo;
 		};
+		77B9CE8A1F4E055E004489B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7780DB231F02E87A00010D38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7780DB2B1F02E87A00010D38;
+			remoteInfo = CountryCallingCodes;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		77B9CE8C1F4E055E004489B9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				77B9CE891F4E055E004489B9 /* CountryCallingCodes.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7780DB2C1F02E87A00010D38 /* CountryCallingCodes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CountryCallingCodes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7780DB861F02FCA400010D38 /* CountryCallingCodes.framework in Frameworks */,
+				77B9CE881F4E055E004489B9 /* CountryCallingCodes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,10 +331,12 @@
 				7780DB4E1F02EAB300010D38 /* Sources */,
 				7780DB4F1F02EAB300010D38 /* Frameworks */,
 				7780DB501F02EAB300010D38 /* Resources */,
+				77B9CE8C1F4E055E004489B9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				77B9CE8B1F4E055E004489B9 /* PBXTargetDependency */,
 			);
 			name = CountryCallingCodesDemo;
 			productName = CountryCallingCodesDemo;
@@ -482,6 +508,11 @@
 			isa = PBXTargetDependency;
 			target = 7780DB511F02EAB300010D38 /* CountryCallingCodesDemo */;
 			targetProxy = 7780DB6B1F02EAB400010D38 /* PBXContainerItemProxy */;
+		};
+		77B9CE8B1F4E055E004489B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7780DB2B1F02E87A00010D38 /* CountryCallingCodes */;
+			targetProxy = 77B9CE8A1F4E055E004489B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

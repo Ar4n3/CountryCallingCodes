@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CountryCodesViewController : UIViewController
+@protocol CountryCodesViewControllerDelegate <NSObject>
+- (void)dismissViewController:(void(^)(void))completion;
+@end
 
+@interface CountryCodesViewController : UIViewController
+@property (weak, nonatomic) id<CountryCodesViewControllerDelegate>delegate;
 @end
