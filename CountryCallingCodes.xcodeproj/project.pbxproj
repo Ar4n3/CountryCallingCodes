@@ -43,6 +43,7 @@
 		77B9CEAC1F4E0D5D004489B9 /* CountryCallingCodesDemoSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B9CEAB1F4E0D5D004489B9 /* CountryCallingCodesDemoSwiftTests.swift */; };
 		77B9CEB41F4E1099004489B9 /* CountryCallingCodes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7780DB2C1F02E87A00010D38 /* CountryCallingCodes.framework */; };
 		77B9CEB51F4E1099004489B9 /* CountryCallingCodes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7780DB2C1F02E87A00010D38 /* CountryCallingCodes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		77B9CEBB1F4E1290004489B9 /* CountryCallingCodesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B9CEBA1F4E1290004489B9 /* CountryCallingCodesTests.m */; };
 		77F4B04D1F4CBFA300B1799E /* CallingCodeHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F4B04B1F4CBFA300B1799E /* CallingCodeHelper.h */; };
 		77F4B04E1F4CBFA300B1799E /* CallingCodeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F4B04C1F4CBFA300B1799E /* CallingCodeHelper.m */; };
 		77F4B0511F4CCC6E00B1799E /* CountryCallingCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F4B04F1F4CCC6E00B1799E /* CountryCallingCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -157,6 +158,8 @@
 		77B9CEA71F4E0D5D004489B9 /* CountryCallingCodesDemoSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountryCallingCodesDemoSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B9CEAB1F4E0D5D004489B9 /* CountryCallingCodesDemoSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCallingCodesDemoSwiftTests.swift; sourceTree = "<group>"; };
 		77B9CEAD1F4E0D5D004489B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77B9CEB91F4E1290004489B9 /* CountryCallingCodesTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CountryCallingCodesTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		77B9CEBA1F4E1290004489B9 /* CountryCallingCodesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryCallingCodesTests.m; sourceTree = "<group>"; };
 		77F4B04B1F4CBFA300B1799E /* CallingCodeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallingCodeHelper.h; sourceTree = "<group>"; };
 		77F4B04C1F4CBFA300B1799E /* CallingCodeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallingCodeHelper.m; sourceTree = "<group>"; };
 		77F4B04F1F4CCC6E00B1799E /* CountryCallingCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryCallingCode.h; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 			children = (
 				7780DB3A1F02E87A00010D38 /* CountryCallingCodesTests.swift */,
 				7780DB3C1F02E87A00010D38 /* Info.plist */,
+				77B9CEBA1F4E1290004489B9 /* CountryCallingCodesTests.m */,
+				77B9CEB91F4E1290004489B9 /* CountryCallingCodesTests-Bridging-Header.h */,
 			);
 			path = CountryCallingCodesTests;
 			sourceTree = "<group>";
@@ -504,6 +509,7 @@
 					7780DB341F02E87A00010D38 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = XZF6KK66YQ;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					7780DB511F02EAB300010D38 = {
@@ -628,6 +634,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77B9CEBB1F4E1290004489B9 /* CountryCallingCodesTests.m in Sources */,
 				7780DB3B1F02E87A00010D38 /* CountryCallingCodesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -879,11 +886,14 @@
 		7780DB441F02E87A00010D38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = XZF6KK66YQ;
 				INFOPLIST_FILE = CountryCallingCodesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.CountryCallingCodesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CountryCallingCodesTests/CountryCallingCodesTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -891,11 +901,13 @@
 		7780DB451F02E87A00010D38 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = XZF6KK66YQ;
 				INFOPLIST_FILE = CountryCallingCodesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.CountryCallingCodesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CountryCallingCodesTests/CountryCallingCodesTests-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
