@@ -71,6 +71,19 @@ CGFloat const kCornerRadius = 8.0f;
     [_alphaView removeFromSuperview];
 }
 
+#pragma mark - Rotation
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    CGFloat delay = 0.0;
+    if (size.width < self.view.bounds.size.width) {
+        delay = 1.0;
+    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_alphaView setFrame:CGRectMake(0, 0, size.width, size.height)];
+    });
+    [_searchController.searchBar setFrame:CGRectMake(0, 0, size.width, _searchController.searchBar.frame.size.height)];
+}
+
 #pragma mark - Search Controller Delegate
 
 - (void)configureSearchController {
@@ -83,6 +96,7 @@ CGFloat const kCornerRadius = 8.0f;
     _searchBarContainerView.layer.cornerRadius = kCornerRadius;
     _searchBarContainerViewBottomConstraint.constant = -kCornerRadius+(kCornerRadius/2/2);
     [_searchBarContainerView addSubview:_searchController.searchBar];
+    [_searchController.searchBar sizeThatFits:_searchBarContainerView.frame.size];
 }
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
