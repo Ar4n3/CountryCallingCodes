@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CountryCodeDataModel : NSObject
-- (id)initWithSearchText:(NSString *)text;
+- (instancetype)initWithSearchText:(NSString *)text;
 - (NSString *)getCountryFlagForCode:(NSString *)countryCode;
 - (NSString *)filteredCountryNameFor:(NSIndexPath *)indexPath;
 - (NSString *)countryNameForCode:(NSString *)countryCode;

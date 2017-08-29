@@ -25,70 +25,25 @@ NSString *const kCountryCodesCodeKey = @"code";
 - (instancetype)init {
     self = [super init];
     if (self) {
-        NSString *jsonPath = [[NSBundle bundleForClass:[self class]] pathForResource:kCountryCodesFileName ofType:kCountryCodesExtension];
-        NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
-        NSError *error;
-        NSDictionary *countryCodeDict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
-        if (!error) {
-            NSMutableDictionary *mutableDict = [[NSMutableDictionary alloc] init];
-            NSArray *sortedKeys = [[countryCodeDict allKeys] sortedArrayUsingSelector:@selector(compare:)];
-            for (NSString *key in sortedKeys) {
-                NSString *countryName = [[NSLocale currentLocale] localizedStringForCountryCode:key];
-                NSString *callingCode = [countryCodeDict objectForKey:key];
-                if (![callingCode isEqualToString:@""]) {
-                    if ([callingCode containsString:@" and "]) {
-                        callingCode = [[callingCode componentsSeparatedByString:@" and "] firstObject];
-                    }
-                    if ([callingCode containsString:@"+"]) {
-                        callingCode = [callingCode stringByReplacingOccurrencesOfString:@"+" withString:@""];
-                    }
-                    NSMutableString *formattedCallingCode = [[NSMutableString alloc] initWithString:@"+"];
-                    [formattedCallingCode appendString:callingCode];
-                    NSDictionary *helperDict = @{ kCountryCodesNameKey: countryName,
-                                                  kCountryCodesCodeKey: [formattedCallingCode copy] };
-                    [mutableDict setObject:helperDict forKey:(NSString *)key];
-                }
-            }
-            _jsonDict = [mutableDict copy];
-        }
+        [self populateJSONDict];
     }
     
     return self;
 }
 
-- (id)initWithSearchText:(NSString *)text {
+- (instancetype)initWithSearchText:(NSString *)text {
     self = [super init];
     if (self) {
-        NSString *jsonPath = [[NSBundle bundleForClass:[self class]] pathForResource:kCountryCodesFileName ofType:kCountryCodesExtension];
-        NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
-        NSError *error;
-        NSDictionary *countryCodeDict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
-        if (!error) {
-            NSArray *sortedKeys = [[countryCodeDict allKeys] sortedArrayUsingSelector:@selector(compare:)];
-            NSMutableArray *helperArray = [[NSMutableArray alloc] initWithCapacity:sortedKeys.count];
-            for (NSString *key in sortedKeys) {
-                NSMutableDictionary *mutableDict = [[NSMutableDictionary alloc] init];
-                NSString *countryName = [[NSLocale currentLocale] localizedStringForCountryCode:key];
-                if ([countryName localizedCaseInsensitiveContainsString:text]) {
-                    NSString *callingCode = [countryCodeDict objectForKey:key];
-                    if (![callingCode isEqualToString:@""]) {
-                        if ([callingCode containsString:@" and "]) {
-                            callingCode = [[callingCode componentsSeparatedByString:@" and "] firstObject];
-                        }
-                        if ([callingCode containsString:@"+"]) {
-                            callingCode = [callingCode stringByReplacingOccurrencesOfString:@"+" withString:@""];
-                        }
-                        NSMutableString *formattedCallingCode = [[NSMutableString alloc] initWithString:@"+"];
-                        [formattedCallingCode appendString:callingCode];
-                        NSDictionary *helperDict = @{ kCountryCodesNameKey: countryName,
-                                                      kCountryCodesCodeKey: [formattedCallingCode copy] };
-                        [mutableDict setObject:helperDict forKey:(NSString *)key];
-                        [helperArray addObject:mutableDict];
-                    }
+        [self populateJSONDict];
+        NSMutableArray *mutableHelperArray = [[NSMutableArray alloc] init];
+        for (NSString *stringKey in _jsonDict) {
+            NSDictionary *value = [_jsonDict objectForKey:stringKey];
+            NSString *name = [value objectForKey:kCountryCodesNameKey];
+            if ([name localizedStandardContainsString:text]) {
+                    [mutableHelperArray addObject:@{ stringKey: value }];
                 }
-            }
-            _filteredArray = [helperArray copy];
         }
+        _filteredArray = [mutableHelperArray copy];
     }
     
     return self;
@@ -160,6 +115,59 @@ NSString *const kCountryCodesCodeKey = @"code";
     }
     
     return [helperArray copy];
+}
+
+#pragma mark - Helper methods
+
+- (void)populateJSONDict {
+    NSError *error;
+    NSDictionary *countryCodeDict = [self getJSONDictionaryOrError:&error];
+    if (!error) {
+        NSMutableDictionary *mutableDict = [[NSMutableDictionary alloc] init];
+        NSArray *sortedKeys = [[countryCodeDict allKeys] sortedArrayUsingSelector:@selector(compare:)];
+        for (NSString *key in sortedKeys) {
+            NSDictionary *helperDict = [self getDictionaryWithNameAndCodeForKey:key inDictionary:countryCodeDict];
+            if (helperDict) {
+                [mutableDict setObject:helperDict forKey:(NSString *)key];
+            }
+        }
+        _jsonDict = [mutableDict copy];
+    }
+}
+
+- (NSDictionary *)getDictionaryWithNameAndCodeForKey:(NSString *)key inDictionary:(NSDictionary *)countryCodeDict {
+    NSString *countryName = [[NSLocale currentLocale] localizedStringForCountryCode:key];
+    NSString *callingCode = [countryCodeDict objectForKey:key];
+    NSString *formattedCallingCode = [self getFormattedCallingCodeWith:callingCode];
+    return @{ kCountryCodesNameKey: countryName,
+              kCountryCodesCodeKey: formattedCallingCode };
+}
+
+- (NSString *)getFormattedCallingCodeWith:(NSString *)callingCode {
+    if ([callingCode containsString:@" and "]) {
+        callingCode = [[callingCode componentsSeparatedByString:@" and "] firstObject];
+    }
+    if ([callingCode containsString:@"+"]) {
+        callingCode = [callingCode stringByReplacingOccurrencesOfString:@"+" withString:@""];
+    }
+    NSMutableString *formattedCallingCode = [[NSMutableString alloc] initWithString:@"+"];
+    [formattedCallingCode appendString:callingCode];
+    
+    return [formattedCallingCode copy];
+}
+
+- (NSDictionary *)getJSONDictionaryOrError:(NSError **)error {
+    NSString *jsonPath = [[NSBundle bundleForClass:[self class]] pathForResource:kCountryCodesFileName ofType:kCountryCodesExtension];
+    NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
+    NSDictionary *countryCodeDict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:error];
+    NSMutableDictionary *helperDict = [countryCodeDict mutableCopy];
+    for (NSString *stringKey in countryCodeDict) {
+        if ([[countryCodeDict objectForKey:stringKey] isEqualToString:@""]) {
+            [helperDict removeObjectForKey:stringKey];
+        }
+    }
+    
+    return helperDict;
 }
 
 @end

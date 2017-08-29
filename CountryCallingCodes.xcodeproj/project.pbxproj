@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77290F0A1F55F28600287F81 /* CountryCallingCodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77290F091F55F28600287F81 /* CountryCallingCodeTests.m */; };
 		7780DB361F02E87A00010D38 /* CountryCallingCodes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7780DB2C1F02E87A00010D38 /* CountryCallingCodes.framework */; };
 		7780DB3B1F02E87A00010D38 /* CountryCallingCodesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780DB3A1F02E87A00010D38 /* CountryCallingCodesTests.swift */; };
 		7780DB3D1F02E87A00010D38 /* CountryCallingCodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 7780DB2F1F02E87A00010D38 /* CountryCallingCodes.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -114,6 +115,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		77290F091F55F28600287F81 /* CountryCallingCodeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryCallingCodeTests.m; sourceTree = "<group>"; };
 		7780DB2C1F02E87A00010D38 /* CountryCallingCodes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CountryCallingCodes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7780DB2F1F02E87A00010D38 /* CountryCallingCodes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountryCallingCodes.h; sourceTree = "<group>"; };
 		7780DB301F02E87A00010D38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				7780DB3C1F02E87A00010D38 /* Info.plist */,
 				77B9CEBA1F4E1290004489B9 /* CountryCallingCodesTests.m */,
 				77B9CEB91F4E1290004489B9 /* CountryCallingCodesTests-Bridging-Header.h */,
+				77290F091F55F28600287F81 /* CountryCallingCodeTests.m */,
 			);
 			path = CountryCallingCodesTests;
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 			files = (
 				77B9CEBB1F4E1290004489B9 /* CountryCallingCodesTests.m in Sources */,
 				7780DB3B1F02E87A00010D38 /* CountryCallingCodesTests.swift in Sources */,
+				77290F0A1F55F28600287F81 /* CountryCallingCodeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1073,6 +1077,7 @@
 				77B9CEB01F4E0D5D004489B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77B9CEB11F4E0D5D004489B9 /* Build configuration list for PBXNativeTarget "CountryCallingCodesDemoSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -1081,6 +1086,7 @@
 				77B9CEB31F4E0D5D004489B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
