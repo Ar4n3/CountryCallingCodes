@@ -18,9 +18,5 @@
 @property (readonly, nonatomic) NSString *code;
 @property (readonly, nonatomic) NSString *flag;
 
-extern NSString *const kCCCode;
-extern NSString *const kCCFlag;
-extern NSString *const kDidSelectCountryCode;
-
 + (instancetype)sharedInstance;
 @end

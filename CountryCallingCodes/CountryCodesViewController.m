@@ -25,6 +25,9 @@
 @end
 
 CGFloat const kCornerRadius = 8.0f;
+NSString *const kCCCodeVC = @"CountryCode";
+NSString *const kCCFlagVC = @"CountryFlag";
+NSString *const kDidSelectCountryCodeVC = @"DidSelectCountryCode";
 
 @implementation CountryCodesViewController
 
@@ -161,12 +164,10 @@ CGFloat const kCornerRadius = 8.0f;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *userInfo = [self getUserInfoForIndexPath:indexPath];
-    [[NSNotificationCenter defaultCenter] postNotificationName:kDidSelectCountryCode object:nil userInfo:userInfo];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kDidSelectCountryCodeVC object:nil userInfo:userInfo];
     if (_searchController.isActive) [_searchController setActive:NO];
     [[CountryCallingCode sharedInstance].delegate updateCountryData];
-    [self dismissViewControllerAnimated:YES completion:^{
-//        [[CountryCallingCode sharedInstance].delegate updateCountryData];
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)onDismiss:(UIButton *)sender {
@@ -179,8 +180,8 @@ CGFloat const kCornerRadius = 8.0f;
 - (NSDictionary *)getUserInfoForIndexPath:(NSIndexPath *)indexPath {
     NSString *flag = [self getFlagForIndexPath:indexPath];
     NSString *code = [self getCallingCodeForIndexPath:indexPath];
-    return @{ kCCCode: code,
-              kCCFlag: flag };
+    return @{ kCCCodeVC: code,
+              kCCFlagVC: flag };
 }
 
 - (NSString *)getFlagForIndexPath:(NSIndexPath *)indexPath {
