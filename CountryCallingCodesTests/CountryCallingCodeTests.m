@@ -63,6 +63,10 @@
 }
 
 - (void)mockNotification {
+    NSString *kCCCode = @"CountryCode";
+    NSString *kCCFlag = @"CountryFlag";
+    NSString *kDidSelectCountryCode = @"DidSelectCountryCode";
+
     NSNotification *notif = [[NSNotification alloc] initWithName:kDidSelectCountryCode object:nil userInfo:@{ kCCCode: @"+34", kCCFlag: @"🇪🇸" }];
     [[NSNotificationCenter defaultCenter] postNotification:notif];
 }
