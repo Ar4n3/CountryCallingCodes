@@ -71,8 +71,11 @@
     [[NSNotificationCenter defaultCenter] postNotification:notif];
 }
 
+- (void)updateCountryData {
+
+}
+
 - (void)mockDelegate {
-    id<CountryCallingCodeDelegate>delegate = self;
     [CountryCallingCode sharedInstance].delegate = self;
 }
 
