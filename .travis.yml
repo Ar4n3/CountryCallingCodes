@@ -1,4 +1,6 @@
 language: objective-c
 osx_image: xcode8.3
-xcode_project: CountryCallingCodes.xcodeproj # path to your xcodeproj folder
+xcode_project: CountryCallingCodes.xcodeproj
 xcode_scheme: CountryCallingCodesTests
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
