@@ -8,11 +8,11 @@ A simple and easy way to get the international calling code and Emoji flag from 
 
 ## Installation
 
-You can download this project in zip, or you can install it via Cocoapods:
+You can download this project, or you can install it via Cocoapods:
 
 ```cocoapods
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '10.0'
 
 target 'TargetName' do
 pod 'CountryCallingCodes'
