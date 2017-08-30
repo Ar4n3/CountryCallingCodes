@@ -1,4 +1,8 @@
 language: objective-c
 osx_image: xcode8.3
-xcode_project: CountryCallingCodes.xcodeproj # path to your xcodeproj folder
+xcode_project: CountryCallingCodes.xcodeproj
 xcode_scheme: CountryCallingCodesTests
+script: 
+  - xctool -project CountryCallingCodes.xcodeproj -scheme CountryCallingCodesTests build test -sdk iphonesimulator GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
