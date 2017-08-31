@@ -1,7 +1,7 @@
 # CountryCallingCodes
 
 
-[![Build Status](https://travis-ci.org/Ar4n3/CountryCallingCodes.svg?branch=master)](https://travis-ci.org/Ar4n3/CountryCallingCodes) [![codecov](https://codecov.io/gh/Ar4n3/CountryCallingCodes/branch/master/graph/badge.svg)](https://codecov.io/gh/Ar4n3/CountryCallingCodes)
+[![Build Status](https://www.bitrise.io/app/fe0994beb7f761fb/status.svg?token=PyJS3u6SCGVaKcnXb5Dfiw&branch=master)](https://www.bitrise.io/app/fe0994beb7f761fb) [![codecov](https://codecov.io/gh/Ar4n3/CountryCallingCodes/branch/master/graph/badge.svg)](https://codecov.io/gh/Ar4n3/CountryCallingCodes)
 
 
 
