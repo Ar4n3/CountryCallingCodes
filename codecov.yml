@@ -5,6 +5,12 @@ coverage:
   precision: 2
   round: nearest
   range: "50...100"
+  ignore:
+    - CountryCallingCodesDemo/*
+    - CountryCallingCodesDemoSwift/*
+    - CountryCallingCodesDemoSwiftTests/*
+    - CountryCallingCodesDemoTests/*
+    - CountryCallingCodesTests/*
   
   status:
     project:
