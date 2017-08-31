@@ -1,7 +1,9 @@
 # CountryCallingCodes
 
 
-[![Build Status](https://travis-ci.org/Ar4n3/CountryCallingCodes.svg?branch=master)](https://travis-ci.org/Ar4n3/CountryCallingCodes)
+[![Build Status](https://travis-ci.org/Ar4n3/CountryCallingCodes.svg?branch=master)](https://travis-ci.org/Ar4n3/CountryCallingCodes) [![codecov](https://codecov.io/gh/Ar4n3/CountryCallingCodes/branch/master/graph/badge.svg)](https://codecov.io/gh/Ar4n3/CountryCallingCodes)
+
+
 
 
 A simple and easy way to get the international calling code and Emoji flag from a selected Country. Demos are provided in Objective-C and Swift.
