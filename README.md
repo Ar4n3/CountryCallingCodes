@@ -1,7 +1,7 @@
 # CountryCallingCodes
 
 
-[![Build Status](https://www.bitrise.io/app/fe0994beb7f761fb/status.svg?token=PyJS3u6SCGVaKcnXb5Dfiw&branch=master)](https://www.bitrise.io/app/fe0994beb7f761fb) [![codecov](https://codecov.io/gh/Ar4n3/CountryCallingCodes/branch/master/graph/badge.svg)](https://codecov.io/gh/Ar4n3/CountryCallingCodes)
+[![Build Status](https://www.bitrise.io/app/fe0994beb7f761fb/status.svg?token=PyJS3u6SCGVaKcnXb5Dfiw&branch=master)](https://www.bitrise.io/app/fe0994beb7f761fb) [![codecov](https://codecov.io/gh/Ar4n3/CountryCallingCodes/branch/master/graph/badge.svg)](https://codecov.io/gh/Ar4n3/CountryCallingCodes) [![pod](https://cocoapod-badges.herokuapp.com/v/CountryCallingCodes/0.0.1/badge.png)](http://cocoadocs.org/docsets/CountryCallingCodes/0.0.1/) [![license](https://cocoapod-badges.herokuapp.com/l/CountryCallingCodes/badge.png)](http://cocoadocs.org/docsets/CountryCallingCodes/0.0.1/)
 
 
 
