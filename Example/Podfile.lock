@@ -1,0 +1,16 @@
+PODS:
+  - CountryCallingCodes (0.1.1)
+
+DEPENDENCIES:
+  - CountryCallingCodes (from `../`)
+
+EXTERNAL SOURCES:
+  CountryCallingCodes:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CountryCallingCodes: b0b013e14e027c454dc0dcc5d376e053ba98460e
+
+PODFILE CHECKSUM: 034251b291865f60d75762e39e5c7f124212dd6d
+
+COCOAPODS: 1.5.3

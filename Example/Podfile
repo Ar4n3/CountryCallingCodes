@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'CountryCallingCodes_Example' do
+  pod 'CountryCallingCodes', :path => '../'
+
+  target 'CountryCallingCodes_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
